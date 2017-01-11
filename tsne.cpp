@@ -716,6 +716,9 @@ int main() {
     int rand_seed = -1;
     TSNE* tsne = new TSNE();
 
+    // Disable buffering of output
+    setbuf(stdout, NULL);
+
     // Read the parameters and the dataset
 	if(tsne->load_data(&data, &origN, &D, &no_dims, &theta, &perplexity, &rand_seed, &max_iter)) {
 
